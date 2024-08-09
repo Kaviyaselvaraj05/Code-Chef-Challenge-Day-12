@@ -1,0 +1,419 @@
+01)Broken Phone
+Uttu broke his phone. He can get it repaired by spending 
+X
+X rupees or he can buy a new phone by spending 
+Y
+Y rupees. Uttu wants to spend as little money as possible. Find out if it is better to get the phone repaired or to buy a new phone.
+
+Input Format
+The first line contains a single integer 
+T
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two space-separated integers 
+X
+X and 
+Y
+Y — the cost of getting the phone repaired and the cost of buying a new phone.
+Output Format
+For each test case,
+
+output REPAIR if it is better to get the phone repaired.
+output NEW PHONE if it is better to buy a new phone.
+output ANY if both the options have the same price.
+You may print each character of REPAIR, NEW PHONE and ANY in uppercase or lowercase (for example, any, ANy, Any will be considered identical).
+
+Constraints
+1
+≤
+T
+≤
+1000
+1≤T≤1000
+1
+≤
+X
+,
+Y
+≤
+1
+0
+4
+1≤X,Y≤10 
+4
+ 
+Sample 1:
+Input
+Output
+3
+100 1000
+10000 5000
+3000 3000
+REPAIR
+NEW PHONE
+ANY
+Explanation:
+Test Case 1: It is better to get the phone repaired since 
+100
+<
+1000
+100<1000.
+
+Test Case 2: It is better to buy a new phone since 
+10000
+>
+5000
+10000>5000.
+
+Test Case 3: Uttu can choose either of the two options since 
+3000
+=
+3000
+3000=3000.
+
+ANSWER:
+for i in range(int(input())):
+    x,y=map(int,input().split(' '))
+    if x<y :
+        print("repair")
+    elif x>y:
+        print("new phone")
+    else:
+        print("any")
+02)Tyre problem
+There are 
+N
+N bikes and 
+M
+M cars on the road.
+
+Each bike has 
+2
+2 tyres.
+Each car has 
+4
+4 tyres.
+Find the total number of tyres on the road.
+
+Input Format
+The first line will contain 
+T
+T - the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers 
+N
+,
+M
+N,M.
+Output Format
+For each test case, output in a single line, the total number of tyres on the road.
+
+Constraints
+1
+≤
+T
+≤
+1000
+1≤T≤1000
+0
+≤
+N
+,
+M
+≤
+100
+0≤N,M≤100
+Sample 1:
+Input
+Output
+2
+2 1
+3 0
+8
+6
+Explanation:
+Test Case 
+1
+1: There are 
+2
+2 bikes and 
+1
+1 car. Each bike has 
+2
+2 tyres, so there are 
+2
+⋅
+2
+=
+4
+2⋅2=4 bike tyres. Similarly, each car has 
+4
+4 tyres, so there are 
+1
+⋅
+4
+=
+4
+1⋅4=4 car tyres. Adding the tyres of all vehicles, we get 
+4
++
+4
+=
+8
+4+4=8 tyres in total.
+
+Test Case 
+2
+2: There are 
+3
+3 bikes and 
+0
+0 cars. Each bike has 
+2
+2 tyres, so there are 
+3
+⋅
+2
+=
+6
+3⋅2=6 bike tyres. There are no cars, so there are 
+0
+⋅
+4
+=
+0
+0⋅4=0 car tyres. Adding the tyres of all vehicles, we get 
+6
++
+0
+=
+6
+6+0=6 tyres in total.
+
+ANSWER:
+for _ in range(int(input())):
+    n,m = map(int,input().split())
+    print(n*2 + m*4)
+03)Sum of Digits
+You're given an integer N. Write a program to calculate the sum of all the digits of N.
+
+Input Format
+The first line contains an integer T, the total number of testcases. Then follow T lines, each line contains an integer N.
+
+Output Format
+For each test case, calculate the sum of digits of N, and display it in a new line.
+
+Constraints
+1
+≤
+T
+≤
+1000
+1≤T≤1000
+1
+≤
+N
+≤
+1000000
+1≤N≤1000000
+Sample 1:
+Input
+Output
+3 
+12345
+31203
+2123
+15
+9
+8
+ANSWER:
+T=int(input())
+for i in range(T):
+    num=input()
+    sum=0
+    l=len(num)
+    for j in range(l):
+        sum+=int(num)%10
+        num=int(num)/10
+    print(sum)
+
+04)Monthly Budget
+Akshat has 
+X
+X rupees to spend in the current month. His daily expenditure is 
+Y
+Y rupees, i.e., he spends 
+Y
+Y rupees each day.
+
+Given that the current month has 
+30
+30 days, find out if Akshat has enough money to meet his daily expenditures for this month.
+
+Input Format
+The first line will contain 
+T
+T - the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers 
+X
+X, 
+Y
+Y - the amount of money Akshat has for the current month and his daily expenditure respectively.
+Output Format
+For each test case, output YES if Akshat has enough money to meet his daily expenditure for 
+30
+30 days of the month, otherwise output NO.
+
+You may print each character of YES and NO in uppercase or lowercase (for example, yes, yEs, Yes will be considered identical).
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+1
+≤
+X
+,
+Y
+≤
+1
+0
+5
+1≤X,Y≤10 
+5
+ 
+Sample 1:
+Input
+Output
+3
+1000 10
+250 50
+1500 50
+YES
+NO
+YES
+Explanation:
+Test Case 
+1
+1: Akshat has 
+1000
+1000 rupees and he wants to spend 
+30
+×
+10
+=
+300
+30×10=300 rupees in the entire month. Therefore, he has enough money for the entire month.
+
+Test Case 
+2
+2: Akshat has 
+250
+250 rupees and he wants to spend 
+30
+×
+50
+=
+1500
+30×50=1500 rupees in the entire month. Therefore, he does not have enough money for the entire month.
+
+Test Case 
+3
+3: Akshat has 
+1500
+1500 rupees and he wants to spend 
+30
+×
+50
+=
+1500
+30×50=1500 rupees in the entire month. Therefore, he has enough money for the entire month.
+
+ANSWER:
+for _ in range (int(input())):
+    x,y = map(int,input().split())
+    if y*30 <=x :
+        print('yes')
+    else:
+        print('no')
+
+  05)Credit score
+To access CRED programs, one needs to have a credit score of 
+750
+750 or more.
+Given that the present credit score is 
+X
+X, determine if one can access CRED programs or not.
+
+If it is possible to access CRED programs, output 
+YES
+YES, otherwise output 
+NO
+NO.
+
+Input Format
+The first and only line of input contains a single integer 
+X
+X, the credit score.
+
+Output Format
+Print 
+YES
+YES if it is possible to access CRED programs. Otherwise, print 
+NO
+NO.
+
+You may print each character of the string in uppercase or lowercase (for example, the strings 
+YeS
+YeS, 
+yEs
+yEs, 
+yes
+yes and 
+YES
+YES will all be treated as identical).
+
+Constraints
+0
+≤
+X
+≤
+1000
+0≤X≤1000
+Subtasks
+Subtask 1 (100 points): Original constraints.
+Sample 1:
+Input
+Output
+823
+YES
+Explanation:
+Since 
+823
+≥
+750
+823≥750, it is possible to access CRED programs.
+
+Sample 2:
+Input
+Output
+251
+NO
+Explanation:
+Since 
+251
+<
+750
+251<750, it is not possible to access CRED programs.
+
+ANSWER:
+x = int(input())
+if x >= 750 :
+    print('yes')
+else:
+    print('no')
+    
+
+
+
